@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "451392250477",
+    "project_id": "news-ta-7d09b",
+    "storage_bucket": "news-ta-7d09b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451392250477:android:2e27a2806f94edd0491564",
+        "android_client_info": {
+          "package_name": "com.wordpress.flutter.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451392250477-kqbcn5hou499fpseeour41bvbbr4umji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ3dCP0sm8GEU9TqH1Iv_GGg3anAQMS6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451392250477-kqbcn5hou499fpseeour41bvbbr4umji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

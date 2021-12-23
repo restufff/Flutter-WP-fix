@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wordpress_app/common/constants.dart';
 import 'package:flutter_wordpress_app/models/Article.dart';
@@ -26,6 +27,23 @@ class _ArticlesState extends State<Articles> {
 
   @override
   void initState() {
+    FirebaseMessaging.instance.getInitialMessage().then((message) {
+      if (message != null) {
+        print(message.notification!.title);
+        // var _routeName = message.data['route'];
+        // Navigator.of(context).pushNamed(_routeName);
+      }
+    });
+
+    FirebaseMessaging.onMessageOpenedApp.listen((event) {});
+
+    FirebaseMessaging.onMessage.listen((event) {
+      print(event);
+      if (event.notification != null) {
+        print(event.notification!.title);
+      }
+    });
+
     super.initState();
     _futureLastestArticles = fetchLatestArticles(1);
     _futureFeaturedArticles = fetchFeaturedArticles(1);
