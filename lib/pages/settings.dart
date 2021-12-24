@@ -20,7 +20,7 @@ class _SettingsState extends State<Settings> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'More',
+          'Biodata',
           style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,

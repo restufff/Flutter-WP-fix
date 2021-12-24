@@ -103,7 +103,7 @@ class _SearchState extends State<Search> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Search',
+        title: Text('Pencarian',
             style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -172,6 +172,7 @@ class _SearchState extends State<Search> {
         if (articleSnapshot.hasData) {
           if (articleSnapshot.data!.length == 0) {
             return Column(
+              key: Key('hasil-pencarian'),
               children: <Widget>[
                 searchBoxes(context),
               ],
