@@ -27,22 +27,22 @@ class _ArticlesState extends State<Articles> {
 
   @override
   void initState() {
-    // FirebaseMessaging.instance.getInitialMessage().then((message) {
-    //   if (message != null) {
-    //     print(message.notification!.title);
-    //     // var _routeName = message.data['route'];
-    //     // Navigator.of(context).pushNamed(_routeName);
-    //   }
-    // });
+    FirebaseMessaging.instance.getInitialMessage().then((message) {
+      if (message != null) {
+        print(message.notification!.title);
+        // var _routeName = message.data['route'];
+        // Navigator.of(context).pushNamed(_routeName);
+      }
+    });
 
-    // FirebaseMessaging.onMessageOpenedApp.listen((event) {});
+    FirebaseMessaging.onMessageOpenedApp.listen((event) {});
 
-    // FirebaseMessaging.onMessage.listen((event) {
-    //   print(event);
-    //   if (event.notification != null) {
-    //     print(event.notification!.title);
-    //   }
-    // });
+    FirebaseMessaging.onMessage.listen((event) {
+      print(event);
+      if (event.notification != null) {
+        print(event.notification!.title);
+      }
+    });
 
     super.initState();
     _futureLastestArticles = fetchLatestArticles(1);
