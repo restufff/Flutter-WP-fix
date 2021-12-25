@@ -1,4 +1,3 @@
-import 'package:alice/alice.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +46,6 @@ Future<void> requestPermission() async {
 }
 
 class MyApp extends StatelessWidget {
-  Alice alice = Alice();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,7 +54,6 @@ class MyApp extends StatelessWidget {
       // routes: {
       //   '/pages/single_article': (_) => SingleArticle(article, heroId),
       // },
-      navigatorKey: alice.getNavigatorKey(),
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: Color(0xFF385C7B),

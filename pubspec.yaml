@@ -68,6 +68,7 @@ flutter:
     - assets/more/notification.png
     - assets/logo-unas.png
     - assets/unas.png
+    - assets/campustimes.png
 
   fonts:
     - family: Poppins

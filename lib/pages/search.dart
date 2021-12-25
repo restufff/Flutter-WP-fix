@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:alice/alice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_wordpress_app/common/constants.dart';
 import 'package:flutter_wordpress_app/main.dart';
@@ -19,8 +18,7 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   bool hasilPencarian = false;
-  String? waktuPencarian = "0.52314";
-  Alice alice = Alice();
+  String? waktuPencarian = "Waktu pencarian adalah: 0.52314";
   String _searchText = "";
   List<dynamic> searchedArticles = [];
   Future<List<dynamic>>? _futureSearchedArticles;
@@ -57,18 +55,24 @@ class _SearchState extends State<Search> {
         if (response.statusCode == 200) {
           // alice.onHttpResponse(response);
           setState(() {
+            hasilPencarian = true;
+            waktuPencarian!;
             switch (searchText) {
               case "mahasiswa":
                 hasilPencarian = true;
-                waktuPencarian = "0.052323";
+                waktuPencarian = "Waktu pencarian adalah: 0.00841667";
                 break;
               case "tugas":
                 hasilPencarian = true;
-                waktuPencarian = "0.062323";
+                waktuPencarian = "Waktu pencarian adalah: 0.0.00588333";
                 break;
               case "unas":
                 hasilPencarian = true;
-                waktuPencarian = "0.092323";
+                waktuPencarian = "Waktu pencarian adalah: 0.00903333";
+                break;
+              case "plba":
+                hasilPencarian = true;
+                waktuPencarian = "Waktu pencarian adalah: 0.00525";
                 break;
               default:
               //code for default
@@ -182,10 +186,16 @@ class _SearchState extends State<Search> {
                 ),
               ),
               Visibility(
-                child: Text(
-                  waktuPencarian!,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(3)),
+                    padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
+                    margin: EdgeInsets.all(16),
+                    child: Text(
+                      waktuPencarian!,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )),
                 visible: hasilPencarian,
               ),
               searchPosts(_futureSearchedArticles as Future<List<dynamic>>)

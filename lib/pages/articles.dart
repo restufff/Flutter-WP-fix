@@ -130,9 +130,10 @@ class _ArticlesState extends State<Articles> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Image(
-            image: AssetImage('assets/unas.png'),
+            image: AssetImage('assets/campustimes.png'),
             height: 65,
           ),
+          centerTitle: true,
           elevation: 5,
           backgroundColor: Colors.white,
         ),
